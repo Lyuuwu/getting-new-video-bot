@@ -22,7 +22,7 @@ async def load_extensions():
 async def main():
     async with bot:
         await load_extensions()
-        My_token = 123
+        My_token = "your token"
         await bot.start(My_token)
 
 if __name__ == "__main__":
