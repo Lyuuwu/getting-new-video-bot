@@ -31,6 +31,7 @@ class Youtube(Cog_Extension):
   every_time = [
     datetime.time(hour=10, minute=30, tzinfo = datetime.timezone(datetime.timedelta(hours = 8))),
     datetime.time(hour=15, minute=30, tzinfo = datetime.timezone(datetime.timedelta(hours = 8))),
+    datetime.time(hour=17, minute=30, tzinfo = datetime.timezone(datetime.timedelta(hours = 8)))
   ]
 
   @commands.Cog.listener()
@@ -41,7 +42,7 @@ class Youtube(Cog_Extension):
   async def do_check(self):
     await self.check.start()
 
-  @tasks.loop(seconds=10, count=1080)
+  @tasks.loop(seconds=10, count=360)
   async def check(self):
     channel_name = "第七史詩"
     videos = scrapetube.get_channel(channel_url=self.channels[channel_name],limit=10)
